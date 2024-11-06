@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard Grid</title>
+</head>
+<body>
+    <script>
+        // User Story 1: print(data) function
+        function print(data) {
+            const textNode = document.createTextNode(data);
+            document.body.appendChild(textNode);
+        }
+
+        // User Story 2: newLine() function
+        function newLine() {
+            const br = document.createElement('br');
+            document.body.appendChild(br);
+        }
+
+        // User Story 3: Declare board_size
+        const board_size = 8; // Change this to any size you want
+
+        // User Story 4: Create the chessboard
+        for (let row = 0; row < board_size; row++) {
+            for (let col = 0; col < board_size; col++) {
+                // Print either a "*" or a "#" depending on the position
+                if ((row + col) % 2 === 0) {
+                    print(" * ");
+                } else {
+                    print(" # ");
+                }
+            }
+            // Move to the next line after each row
+            newLine();
+        }
+    </script>
+</body>
+</html>
